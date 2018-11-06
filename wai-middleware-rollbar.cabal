@@ -1,5 +1,5 @@
 name:                wai-middleware-rollbar
-version:             0.11.0
+version:             0.12.0
 synopsis:            Middleware that communicates to Rollbar.
 description:         Middleware that communicates to Rollbar.
 homepage:            https://github.com/joneshf/wai-middleware-rollbar#readme
@@ -19,7 +19,7 @@ library
   exposed-modules:     Network.Wai.Middleware.Rollbar
                      , Network.Wai.Middleware.Rollbar.Payload
   build-depends:       base >= 4.9 && < 5
-                     , aeson >= 1.0 && < 1.4
+                     , aeson >= 1.0 && < 1.5
                      , bytestring >= 0.10 && < 0.11
                      , hostname >= 1.0 && < 1.1
                      , http-client >= 0.5 && < 0.6
