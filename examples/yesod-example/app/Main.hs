@@ -1,11 +1,26 @@
-import Application
-import Yesod.Core
-import Network.Wai.Handler.Warp
-import System.Environment
-import qualified Data.Text as T
-import Rollbar.AccessToken
+{-# LANGUAGE DataKinds #-}
+{-# LANGUAGE OverloadedStrings #-}
+
+module Main where
+
+import           Application
+import qualified Data.Text                      as T
+import           Network.Wai.Handler.Warp       (run)
+import           Network.Wai.Middleware.Rollbar
+import           Rollbar.AccessToken
+import           Rollbar.Item.Environment
+import           System.Environment
+import           Yesod.Core
 
 main :: IO ()
 main = do
-  _accessToken <- AccessToken . T.pack <$> getEnv "ROLLBAR_ACCESS_TOKEN"
-  toWaiAppPlain App >>=  run 3000
+  settings <- mkSettings
+  app      <- toWaiAppPlain App
+  run 3000 $ exceptions settings app
+
+mkSettings :: IO (Settings '[])
+mkSettings =
+  Settings <$> (AccessToken . T.pack <$> getEnv "ROLLBAR_ACCESS_TOKEN")
+           <*> pure Nothing
+           <*> pure Nothing
+           <*> pure (Environment "development")

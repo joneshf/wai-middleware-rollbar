@@ -1,12 +1,12 @@
-{-# LANGUAGE OverloadedStrings    #-}
-{-# LANGUAGE TemplateHaskell      #-}
-{-# LANGUAGE QuasiQuotes          #-}
-{-# LANGUAGE TypeFamilies         #-}
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE QuasiQuotes #-}
+{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE TypeFamilies #-}
 
 module Application where
 
-import Yesod.Core
 import Control.Exception (Exception, throw)
+import Yesod.Core
 
 data App = App
 
