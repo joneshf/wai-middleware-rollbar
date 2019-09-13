@@ -4,7 +4,6 @@ version: "0.0.0"
 dependencies:
 - base
 - yesod-core
-- wai-middleware-rollbar
 
 # The library contains all of our application code. The executable
 # defined below is just a thin wrapper.
@@ -21,5 +20,8 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - yesod-example
+    - rollbar-hs
+    - text
+    - wai-middleware-rollbar
     - warp
+    - yesod-example

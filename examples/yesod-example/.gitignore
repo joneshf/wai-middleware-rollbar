@@ -20,3 +20,5 @@ cabal.sandbox.config
 *~
 \#*
 yesod-example.cabal
+.env
+client_session_key.aes

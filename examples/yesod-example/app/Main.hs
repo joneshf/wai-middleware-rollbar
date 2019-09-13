@@ -16,7 +16,7 @@ main :: IO ()
 main = do
   settings <- mkSettings
   app      <- toWaiAppPlain App
-  run 3000 $ exceptions settings app
+  run 3000 $ requests settings app
 
 mkSettings :: IO (Settings '[])
 mkSettings =
