@@ -1,8 +1,8 @@
 flags: {}
 extra-package-dbs: []
 packages:
-- .
-- examples/yesod-example
+  - .
+  - examples/yesod-example
 extra-deps:
-- rollbar-hs-0.1.0.1
+  - rollbar-hs-0.1.0.1
 resolver: nightly-2017-11-25

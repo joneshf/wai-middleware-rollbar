@@ -1,9 +1,9 @@
-name:    yesod-example
+name: yesod-example
 version: "0.0.0"
 
 dependencies:
-- base
-- yesod-core
+  - base
+  - yesod-core
 
 # The library contains all of our application code. The executable
 # defined below is just a thin wrapper.
@@ -16,12 +16,12 @@ executables:
     main: Main.hs
     source-dirs: app
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
     dependencies:
-    - rollbar-hs
-    - text
-    - wai-middleware-rollbar
-    - warp
-    - yesod-example
+      - rollbar-hs
+      - text
+      - wai-middleware-rollbar
+      - warp
+      - yesod-example
