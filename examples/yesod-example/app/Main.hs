@@ -15,7 +15,7 @@ import           Yesod.Core
 main :: IO ()
 main = do
   settings <- mkSettings
-  app      <- toWaiAppPlain App
+  app      <- toWaiApp App
   run 3000 $ requests settings app
 
 mkSettings :: IO (Settings '[])
